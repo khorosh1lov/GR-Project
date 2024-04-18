@@ -11,22 +11,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		dropdown.appendChild(option);
 	});
 
-	// Load the previously selected word from localStorage and display it
-	const storedWord = localStorage.getItem('selectedWord');
-	if (storedWord) {
-		dropdown.value = storedWord;
-		displaySelectedWord(storedWord, true);
-	}
-
 	document.getElementById('randomSelectButton').addEventListener('click', () => {
 		const randomWord = allWords[Math.floor(Math.random() * allWords.length)];
 		dropdown.value = randomWord;
-		localStorage.setItem('selectedWord', randomWord); // Store the selected word in localStorage
 		displaySelectedWord(randomWord);
 	});
 
 	dropdown.addEventListener('change', () => {
-		localStorage.setItem('selectedWord', dropdown.value); // Store the selected word in localStorage
 		displaySelectedWord(dropdown.value);
 	});
 });
@@ -35,19 +26,13 @@ function displaySelectedWord(word, loadFromStorage = false) {
 	const examplesContainer = document.getElementById('examplesContainer');
 	examplesContainer.innerHTML = `<div class="selected-word">${word}</div>`;
 
-	if (!loadFromStorage) {
-		// Create and append "Show Examples" button if not already present
-		if (!document.getElementById('showExamplesButton')) {
-			const showExamplesButton = document.createElement('button');
-			showExamplesButton.id = 'showExamplesButton';
-			showExamplesButton.textContent = 'Show Examples';
-			examplesContainer.appendChild(showExamplesButton);
+	// Always create and append "Show Examples" button
+	const showExamplesButton = document.createElement('button');
+	showExamplesButton.id = 'showExamplesButton';
+	showExamplesButton.textContent = 'Examples';
+	examplesContainer.appendChild(showExamplesButton);
 
-			showExamplesButton.addEventListener('click', () => displayExamples(word));
-		}
-	} else {
-		displayExamples(word); // Directly show examples if loading from storage
-	}
+	showExamplesButton.addEventListener('click', () => displayExamples(word));
 }
 
 function displayExamples(word) {
