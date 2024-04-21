@@ -4,6 +4,7 @@ const d = [
    'Deckel',
    'dezent',
    'Diele',
+   'dösen',
    'drall',   
    'Dreigestirn',
    'Druckfahne',

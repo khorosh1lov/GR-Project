@@ -1,0 +1,26 @@
+const h = [
+   'Häkchen',  
+   'haken, Haken',
+   'Halunke',
+   'Handwerk legen',
+   'hanebüchen',
+   'hart im Nehmen sein', 
+   'hecheln',  
+   'hechten',
+   'Heft des Handelns nehmen',
+   'Heidenrespekt/angst',
+   'Heimtücke, heimtückisch',
+   'heimzahlen',
+   'heiser',
+   'hereinlegen',
+   'herumlungern',
+   'hetzen',
+   'heulen',
+   'Hocke',
+   'hocken', 
+   'Hosenmatz',
+   'Hosennaht',
+   'huschen',
+ ];
+
+export default h;

@@ -11,9 +11,8 @@ html {
 body {
    font-family: Arial, Verdana, sans-serif;
    background-color: white;
-   border: 2px solid rgb(168, 179, 182);
-   width: 90%;
-   margin: 0.5% auto;
+   width: 85%;  
+   margin: 2% auto;
 }
 
 .main-header {
@@ -22,7 +21,7 @@ body {
    align-content: center;
    justify-content: center;
    align-items: center;
-   gap: 15%;
+   gap: 10%;
    padding: 1%;
 }
 
@@ -38,9 +37,9 @@ body {
 
 main {
    width: 80%;
-   border: 1px solid green;
-   margin: 1% auto;
+   margin: 10px auto;
    text-align: left;
+   padding-bottom: 5%;
 }
 
 @media (max-width: 992px) {

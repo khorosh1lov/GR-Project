@@ -1,5 +1,24 @@
 import a from './words/a.js';
 import b from './words/b.js';
 import d from './words/d.js';
+import e from './words/e.js';
+import f from './words/f.js';
+import g from './words/g.js';
+import h from './words/h.js';
+import i from './words/i.js';
+import j from './words/j.js';
+import k from './words/k.js';
+import l from './words/l.js';
+import m from './words/m.js';
+import n from './words/n.js';
+import p from './words/p.js';
+import q from './words/q.js';
+import r from './words/r.js';
+import s from './words/s.js';
+import t from './words/t.js';
+import u from './words/u.js';
+import v from './words/v.js';
+import w from './words/w.js';
+import z from './words/z.js';
 
-export const allWords = [...a, ...b, ...d /*, ...other arrays */];
+export const allWords = [...a, ...b, ...d, ...e, ...f, ...g, ...h, ...i, ...j, ...k, ...l, ...m, ...n, ...p, ...q, ...r, ...s, ...t, ...u, ...v, ...w, ...z];
