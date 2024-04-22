@@ -8,24 +8,38 @@
 body {
     font-family: Arial, Verdana, sans-serif;
     background-color: #e6f5ff;
+    padding-top: 43px;
+    /* space for the fixed header */
 }
 
 header {
-    background-color: #a1d3f08c;
+    background-color: #c2e2f6;
     padding: 0.5em;
     color: maroon;
     border: 2px solid maroon;
-    width: 100%; /* Ensure header is full width */
+    width: 100%;
+    position: fixed;
+    /* Fix header on top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* Ensure header is above other content */
 }
 
 .main-header {
     font-size: 110%;
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    /* Adjusted for better spacing */
     align-items: center;
-    gap: 10%;   /*Alex: gap: 14%; */
+}
+
+.main-container {
+    display: flex;
+    height: calc(-43px + 100vh);
+    /* Full height minus header */
+    overflow: hidden;
+    /* Prevents scrolling inside main container */
 }
 
 .return {
@@ -34,22 +48,16 @@ header {
     color: navy;
 }
 
-.main-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    min-height: 100vh;
-    border-right: 2px solid maroon;
-}
-
 .selection-container {
-    flex: 1;
-    min-width: 200px;
-    padding: 0.65em;  /*Alex:  0.5em*/
-    border-right: 2px solid maroon; 
-    border-left: 2px solid maroon;
+    width: 340px;
+    min-width: 340px;
+    max-width: 400px;
     text-align: center;
+    padding: 0.65em;
+    border-right: 2px solid maroon;
     background-color: #a1d3f08c;
+    height: 100%;
+    /* Allows scrolling within the container if necessary */
 }
 
 /*This not in Alex:*/
@@ -57,10 +65,11 @@ header {
     background-color: rgba(128, 0, 0, 0.637); margin-bottom: 10px; color:white;}
 
 #examplesContainer {
-    flex: 3;
-    min-width: 400px;
-    margin: 0.75em;   /*Alex: 1em*/
-    font-size: 100%;
+    flex-grow: 1;
+    /* Takes remaining space */
+    margin: 0.75em;
+    /* Only vertical scroll */
+    overflow: auto;
     text-align: center;
 }
 
@@ -68,6 +77,7 @@ header {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
+    text-align: center;
     /*Alex: font-size: 23px;   margin-bottom: 20px;*/
 }
 
@@ -161,14 +171,34 @@ header {
 } */
 
 @media (max-width: 992px) {
-    header,
-    .selection-container,
-    #examplesContainer {
-        border: none;
+
+    /* Responsive styles for mobile devices */
+    body {
+        padding-top: 0;
+        /* Remove padding top when on mobile */
+    }
+
+    header {
+        position: static;
+        /* Header is no longer fixed */
     }
 
     .main-container {
-        border-right: 0;
+        flex-direction: column;
+        height: auto;
+        /* Remove fixed height */
+    }
+
+    .selection-container,
+    #examplesContainer {
+        width: 100%;
+        max-width: 100%;
+        /* Full width on small screens */
+        height: auto;
+        overflow: visible;
+        /* Remove fixed height and scrolling */
+        padding: 10px;
+        /* Padding for mobile */
     }
 }
 /*
@@ -189,6 +219,7 @@ header {
     .main-container {
         flex-direction: column;
         min-height: auto;
+        padding-top: 14px;
     }
 
     .selection-container,
