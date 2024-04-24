@@ -18,6 +18,7 @@ header {
     color: maroon;
     border: 2px solid maroon;
     width: 100%;
+    height: 44px;
     position: fixed;
     /* Fix header on top */
     top: 0;
@@ -36,7 +37,7 @@ header {
 
 .main-container {
     display: flex;
-    height: calc(-43px + 100vh);
+    height: calc(100vh - 44px);
     /* Full height minus header */
     overflow: hidden;
     /* Prevents scrolling inside main container */
@@ -171,16 +172,10 @@ header {
 } */
 
 @media (max-width: 992px) {
-
-    /* Responsive styles for mobile devices */
-    body {
-        padding-top: 0;
-        /* Remove padding top when on mobile */
-    }
-
     header {
-        position: static;
+        position: fixed;
         /* Header is no longer fixed */
+        height: auto;
     }
 
     .main-container {
@@ -219,7 +214,7 @@ header {
     .main-container {
         flex-direction: column;
         min-height: auto;
-        padding-top: 14px;
+        padding-top: 25px;
     }
 
     .selection-container,
@@ -269,7 +264,7 @@ header {
     }
 
     body {
-        padding-top: 110px; /* Adjust padding to the height of your header */
+        padding-top: 100px; /* Adjust padding to the height of your header */
     }
 }
 
